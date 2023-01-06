@@ -20,4 +20,4 @@
 
 ## Vamos começar?
 
-Vá para a seção de [pré-requisitos](./testes-e2e-com-cypress/lessons/_pre-requirements_.md).
+Vá para a seção de [pré-requisitos](./Lessons/lessons/_pre-requirements_.md).
