@@ -3,8 +3,6 @@ it('successfully signs up using confirmation code sent via email', () => {
   const emailAddress = `${faker.datatype.uuid()}@${Cypress.env('MAILOSAUR_SERVER_ID')}.mailosaur.net`
   const password = Cypress.env('USER_PASSWORD')
 
-  cy.clock()
-
   cy.intercept('GET', '**/notes').as('getNotes')
   cy.fillSignupFormAndSubmit(emailAddress, password)
 
