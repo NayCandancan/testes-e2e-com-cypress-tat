@@ -21,7 +21,6 @@ Cypress.Commands.add('login',
       cy.get('#password').type(password, { log: false })
       cy.contains('button', 'Login').click()
 
-      cy.wait(7000)
       cy.wait('@getNotes')
       cy.contains('h1', 'Your Notes').should('be.visible')
     }

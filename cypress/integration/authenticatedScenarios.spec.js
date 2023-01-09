@@ -17,7 +17,6 @@ describe('Scenarios where authentication is a pre-requirement', () => {
     cy.wait('@getNotes')
 
     cy.deleteNote(updatedNoteDescription)
-    cy.wait(7000)
     cy.wait('@getNotes')
   })
   it('successfully submits the form', () => {
@@ -26,7 +25,6 @@ describe('Scenarios where authentication is a pre-requirement', () => {
 
     cy.fillSettingsFormAndSubmit()
 
-    cy.wait(7000)
     cy.wait('@getNotes')
     cy.wait('@paymentRequest').then(response => {
       expect(response.state).to.equal('Complete')
@@ -35,7 +33,6 @@ describe('Scenarios where authentication is a pre-requirement', () => {
   it('logout', () => {
     cy.intercept('GET', '**/notes').as('getNotes')
     cy.visit('/')
-    cy.wait(7000)
     cy.wait('@getNotes')
 
     if (Cypress.config('viewportWidth') < Cypress.env('viewportWidthBreakpoint')) {
