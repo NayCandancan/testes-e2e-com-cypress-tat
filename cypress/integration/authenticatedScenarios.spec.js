@@ -1,7 +1,5 @@
 describe('Scenarios where authentication is a pre-requirement', () => {
-  beforeEach(() =>
-
-    cy.login())
+  beforeEach(() => cy.login())
 
   it('CRUDs a note', () => {
     const faker = require('faker')
