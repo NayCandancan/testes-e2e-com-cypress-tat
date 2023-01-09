@@ -14,7 +14,7 @@ it('successfully signs up using confirmation code sent via email', () => {
     const confirmationCode = message.html.body.match(/\d{6}/)[0]
     cy.get('#confirmationCode').type(`${confirmationCode}{enter}`)
 
-    cy.wait(1500)
+
     cy.wait('@getNotes')
     cy.contains('h1', 'Your Notes').should('be.visible')
   })
